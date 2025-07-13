@@ -5,40 +5,24 @@ import type {
 } from "@/types.ts";
 
 export const SITE: SiteConfiguration = {
-  title: "Barebones",
+  title: "Emotive WorldCraft",
   description:
-    "A barebones starter theme. Built with Astro, Tailwind CSS, and Markdown.",
-  href: "https://barebones.superwebthemes.com",
-  author: "SuperWeb Development Inc.",
-  locale: "en-CA",
+    "Emotive WorldCraft: Immersive worlds of sound, story, and art for those willing to feel deeply. A creation of Aaron Holbrook.",
+  href: "https://emotiveworldcraft.com",
+  author: "Aaron Holbrook",
+  locale: "en-US",
 };
 
 export const NAV_LINKS: NavigationLinks = {
-  blog: {
-    path: "/blog",
-    label: "Blog",
-  },
-  projects: {
-    path: "/projects",
-    label: "Projects",
-  },
-  documentation: {
-    path: "https://docs.superwebthemes.com",
-    label: "Documentation",
+  worlds: {
+    path: "/worlds",
+    label: "Worlds",
   },
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
   email: {
     label: "Email",
-    href: "mailto:ttl@trevortylerlee.com",
-  },
-  github: {
-    label: "GitHub",
-    href: "https://github.com/trevortylerlee",
-  },
-  twitter: {
-    label: "X (formerly Twitter)",
-    href: "https://twitter.com/boogerbuttcheek",
+    href: "mailto:hello@aaronjholbrook.com",
   },
 };

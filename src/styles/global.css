@@ -2,12 +2,18 @@
 @import "./typography.css" layer(components);
 @variant dark (&:where(.dark, .dark *));
 
+html {
+  font-size: 20px;
+}
+
 :root {
   color-scheme: light dark;
 }
+
 .dark {
   color-scheme: dark;
 }
+
 .light {
   color-scheme: light;
 }
@@ -16,6 +22,7 @@
   &:where(.dark, .dark *) {
     @slot;
   }
+
   @media (prefers-color-scheme: dark) {
     &:where(.system, .system *) {
       @slot;
@@ -44,6 +51,7 @@
   text-underline-offset: 3px;
   text-decoration-color: var(--prose-link-underline-color);
   text-decoration-thickness: 1px;
+
   & code {
     font-weight: var(--font-weight-semibold);
   }

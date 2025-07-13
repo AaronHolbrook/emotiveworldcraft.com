@@ -5,17 +5,15 @@ import ExternalLink from "@/components/ExternalLink.astro";
 ---
 
 <section class="py-3">
-  <h2 class="text-muted-text dark:text-dark-muted-text mb-3 text-lg font-bold">
-    Feedback
-  </h2>
+  <h2 class="text-muted-text dark:text-dark-muted-text mb-3 text-lg font-bold">Feedback</h2>
+  <p class="prose mb-4 text-sm text-gray-400">
+    I’d love to know if any of this resonated with you, if it made you feel something, or even if it didn’t work for
+    you. Your honest thoughts help keep these worlds alive.
+  </p>
   <div class="grid list-none gap-4 p-0">
     {
       Object.keys(SOCIAL_LINKS).map((socialLinkKey) => {
-        return (
-          <ExternalLink href={SOCIAL_LINKS[socialLinkKey].href}>
-            {SOCIAL_LINKS[socialLinkKey].label}
-          </ExternalLink>
-        );
+        return <ExternalLink href={SOCIAL_LINKS[socialLinkKey].href}>{SOCIAL_LINKS[socialLinkKey].label}</ExternalLink>;
       })
     }
   </div>
