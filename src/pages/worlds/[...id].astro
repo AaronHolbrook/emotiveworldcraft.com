@@ -7,6 +7,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SeoPost from "@/components/SeoPost.astro";
 
 import { formatDate } from "@/lib/util";
+import Spacer from "@/components/Spacer.astro";
 
 interface Props {
   entry: CollectionEntry<"worlds">;
@@ -29,24 +30,53 @@ const { Content } = await render(entry);
     slot="head"
     entry={entry}
   />
-  <div>
+  <div class="mx-auto max-w-3xl px-4">
+    {
+      entry.data.audio && (
+        <div class="bg-muted dark:bg-dark-muted mb-8 rounded-lg bg-yellow-50 px-6 pt-6 pb-4 text-center shadow-sm dark:bg-gray-900">
+          <p class="text-muted-text dark:text-dark-muted-text mx-auto max-w-xl text-sm">
+            This world has its own soundtrack. Press play to hear the music that inspired and shapes this experience.
+            Feel free to listen as you read or simply take it in on its own.
+          </p>
+          <audio
+            controls
+            loop
+            class="emotive-audio-player mx-auto"
+            style="width: 100%; max-width: 500px;">
+            <source
+              src={`/audio/${entry.data.audio}`}
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      )
+    }
+
+    <Spacer size="sm" />
+
+    <h1 class="mb-4 text-center text-[36px] leading-snug font-bold text-balance text-black dark:text-white">
+      {entry.data.title}
+    </h1>
+    <p class="text-muted-text dark:text-dark-muted-text mb-8 text-center">
+      {formatDate(entry.data.publicationDate)}
+    </p>
+
+    <Spacer size="sm" />
+
     {
       entry.data.image && (
         <Image
           src={entry.data.image}
           alt={entry.data.imageAlt || ""}
-          class="mb-12 h-auto w-full"
+          class="mb-12 h-auto w-full rounded-lg shadow"
           draggable="false"
         />
       )
     }
-    <h1 class="text-[36px] leading-snug font-bold text-balance text-black dark:text-white">
-      {entry.data.title}
-    </h1>
-    <p class="text-muted-text dark:text-dark-muted-text mt-3">
-      {formatDate(entry.data.publicationDate)}
-    </p>
-    <hr class="border-muted-text dark:border-dark-muted-text my-12 border-[0.5px] opacity-10 dark:opacity-15" />
+
+    <Spacer size="sm" />
+
     <div class="prose mx-auto">
       <Content />
     </div>

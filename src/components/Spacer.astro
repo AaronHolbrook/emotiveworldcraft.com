@@ -1,0 +1,26 @@
+---
+const { size = "md" } = Astro.props;
+const sizes = {
+  sm: "2rem",
+  md: "4rem",
+  lg: "8rem",
+  xl: "12rem",
+  "2xl": "16rem",
+  "3xl": "20rem",
+  "4xl": "24rem",
+  "5xl": "28rem",
+  "6xl": "32rem",
+  "7xl": "36rem",
+  "8xl": "40rem",
+  "9xl": "44rem",
+  "10xl": "48rem",
+  "11xl": "52rem",
+  "12xl": "56rem",
+};
+const height = sizes[size] ?? sizes.md;
+---
+
+<div
+  class="spacer"
+  style={`height: ${height}; width: 100%;`}>
+</div>
