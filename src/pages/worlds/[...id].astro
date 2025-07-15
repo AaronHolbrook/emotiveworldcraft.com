@@ -11,6 +11,7 @@ import Spacer from "@/components/Spacer.astro";
 
 interface Props {
   entry: CollectionEntry<"worlds">;
+  streamLink: string | undefined;
 }
 
 export async function getStaticPaths() {
@@ -49,6 +50,18 @@ const { Content } = await render(entry);
             />
             Your browser does not support the audio element.
           </audio>
+
+          {entry.data.streamLink && (
+            <div class="mt-4 text-center">
+              <a
+                href={entry.data.streamLink}
+                target="_blank"
+                rel="noopener"
+                class="text-muted-text dark:text-dark-muted-text inline-block rounded bg-[#6A3645]/20 px-4 py-2 text-sm shadow-sm backdrop-blur-xl hover:underline">
+                Stream this track wherever you prefer
+              </a>
+            </div>
+          )}
         </div>
       )
     }

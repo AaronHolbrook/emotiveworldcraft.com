@@ -11,6 +11,7 @@ const worlds = defineCollection({
       image: image().optional(),
       imageAlt: z.string().optional(),
       audio: z.string().optional(),
+      streamLink: z.string().optional(),
       tags: z.array(z.string()).optional(),
     }),
 });
