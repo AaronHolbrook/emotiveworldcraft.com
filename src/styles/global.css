@@ -75,30 +75,5 @@ audio.emotive-audio-player {
   max-width: 600px;
   display: block;
   margin: 1rem auto;
-  border-radius: 12px;
-  background-color: #f4f4f4;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dark audio.emotive-audio-player {
-  background-color: #1a1a1a;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-}
-
-audio.emotive-audio-player::-webkit-media-controls-panel {
-  background-color: transparent;
-  border-radius: 12px;
-}
-
-audio.emotive-audio-player::-webkit-media-controls-play-button,
-audio.emotive-audio-player::-webkit-media-controls-volume-slider,
-audio.emotive-audio-player::-webkit-media-controls-timeline {
-  filter: invert(0.2);
-}
-
-.dark audio.emotive-audio-player::-webkit-media-controls-play-button,
-.dark audio.emotive-audio-player::-webkit-media-controls-volume-slider,
-.dark audio.emotive-audio-player::-webkit-media-controls-timeline {
-  filter: invert(0.8);
 }
