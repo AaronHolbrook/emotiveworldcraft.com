@@ -42,7 +42,7 @@ html {
   --color-muted-text: var(--color-neutral-700);
 
   --color-dark-bg: var(--color-neutral-950);
-  --color-dark-link: oklch(73.9% 0.1387 282.47);
+  --color-dark-link: rgb(215 54 69);
   --color-dark-muted-text: var(--color-neutral-300);
 }
 

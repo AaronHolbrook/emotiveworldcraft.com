@@ -6,13 +6,17 @@ import Footer from "@/components/Footer.astro";
 import Navigation from "@/components/Navigation.astro";
 ---
 
-<html lang="en">
+<html
+  lang="en"
+  class="dark bg-cover bg-fixed bg-center"
+  style="background-image:url('/images/site-bg.jpg')">
   <BaseHead>
     <slot name="head" />
   </BaseHead>
-  <body class="bg-bg dark:bg-dark-bg">
+  <body class="p-2 sm:p-4 md:p-8">
     <Navigation />
-    <div class="mx-auto max-w-screen-sm p-3 font-sans sm:p-6">
+    <div
+      class="isolate mx-auto max-w-screen-sm rounded-3xl bg-white/5 p-8 font-sans shadow-2xl ring-1 ring-black/5 backdrop-blur-3xl backdrop-brightness-50">
       <main class="min-h-[80vh]">
         <slot />
       </main>
