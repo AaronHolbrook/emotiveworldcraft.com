@@ -23,7 +23,7 @@ export const NAV_LINKS: NavigationLinks = {
 export const SOCIAL_LINKS: SocialLinks = {
   facebook: {
     label: "Facebook",
-    href: "https://www.facebook.com/aaronjholbrook/"
+    href: "https://www.facebook.com/people/Emotive-WorldCraft/61578701720912/"
   },
   instagram: {
     label: "Instagram",
