@@ -1,5 +1,5 @@
 ---
-const { size = "md" } = Astro.props;
+const { size = "md", showLine = false } = Astro.props;
 const sizes = {
   sm: "2rem",
   md: "4rem",
@@ -21,6 +21,9 @@ const height = sizes[size] ?? sizes.md;
 ---
 
 <div
-  class="spacer"
-  style={`height: ${height}; width: 100%;`}>
+  class="spacer relative"
+  style={`height: ${height}; width: 100%; position: relative;`}>
+  <div
+    style="position: absolute; top: 25%; bottom: 25%; left: 50%; width: 2px; background-color: var(--muted-text, rgba(255,255,255,0.2)); opacity: 0.1;">
+  </div>
 </div>

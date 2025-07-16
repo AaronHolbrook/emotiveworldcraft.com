@@ -1,19 +1,19 @@
 ---
 import { formatDate } from "@/lib/util";
 
-const { post } = Astro.props;
+const { world } = Astro.props;
 ---
 
 <li>
   <a
-    href={`/worlds/${post.id}`}
+    href={`/worlds/${world.id}`}
     class="link flex w-full flex-col sm:flex-row sm:items-center sm:justify-between"
   >
-    <span>{post.data.title}</span>
+    <span>{world.data.title}</span>
     <div
       class="text-muted-text dark:text-dark-muted-text text-sm font-normal decoration-0"
     >
-      {formatDate(post.data.publicationDate)}
+      {formatDate(world.data.publicationDate)}
     </div>
   </a>
 </li>

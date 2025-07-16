@@ -23,6 +23,13 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+
+const isProduction = import.meta.env.ENVIRONMENT === "production";
+
+if (entry.data.status === "draft" && isProduction) {
+  return new Response(null, { status: 404 });
+}
+
 const { Content } = await render(entry);
 ---
 
@@ -66,16 +73,17 @@ const { Content } = await render(entry);
       )
     }
 
-    <Spacer size="sm" />
-
     <h1 class="mb-4 text-center text-[36px] leading-snug font-bold text-balance text-black dark:text-white">
       {entry.data.title}
     </h1>
-    <p class="text-muted-text dark:text-dark-muted-text mb-8 text-center">
-      {formatDate(entry.data.publicationDate)}
-    </p>
 
-    <Spacer size="sm" />
+    {
+      entry.data.publicationDate && (
+        <p class="text-muted-text dark:text-dark-muted-text mb-8 text-center">
+          {formatDate(entry.data.publicationDate)}
+        </p>
+      )
+    }
 
     {
       entry.data.image && (
@@ -87,8 +95,6 @@ const { Content } = await render(entry);
         />
       )
     }
-
-    <Spacer size="sm" />
 
     <div class="prose mx-auto">
       <Content />

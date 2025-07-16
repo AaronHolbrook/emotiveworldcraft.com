@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import World from "@/components/World.astro";
+
+const isLocal = import.meta.env.ENVIRONMENT === "local";
+const allWorlds = await getCollection("worlds");
+const now = new Date();
+
+const worlds = allWorlds
+  .filter((entry) => {
+    const { status, publicationDate } = entry.data;
+
+    // don't let drafts be shown anywhere but local
+    if (status === "draft" && !isLocal) return false;
+
+    // only published posts show in the index
+    if (status !== "published") return false;
+
+    // if there is no publication date listed, it can't be published yet
+    if (!publicationDate) return false;
+
+    // the only items we want to show in the index are ones that are today or older
+    if (publicationDate > now) return false;
+
+    // must be valid if we're here!
+    return true;
+  })
+  .sort((a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf());
+---
+
+<section class="py-3">
+  <h2 class="text-muted-text dark:text-dark-muted-text mb-3 text-lg font-bold">Worlds</h2>
+  <div class="grid list-none gap-4 p-0">
+    {worlds.map((world) => <World world={world} />)}
+  </div>
+</section>

@@ -4,9 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), mdx()],
+  integrations: [sitemap(), mdx(), react()],
   markdown: {
     shikiConfig: {
       theme: "dark-plus",

@@ -6,8 +6,11 @@ const worlds = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string(),
-      publicationDate: z.date(),
+      status: z.enum(["draft", "protected", "unlisted", "published"]),
+      
+      publicationDate: z.date().optional(),
+
+      description: z.string().optional(),
       image: image().optional(),
       imageAlt: z.string().optional(),
       audio: z.string().optional(),
