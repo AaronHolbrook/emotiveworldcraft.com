@@ -21,6 +21,18 @@ export const NAV_LINKS: NavigationLinks = {
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
+  facebook: {
+    label: "Facebook",
+    href: "https://www.facebook.com/aaronjholbrook/"
+  },
+  instagram: {
+    label: "Instagram",
+    href: "https://www.instagram.com/aaronjholbrook/"
+  },
+  bluesky: {
+    label: "Bluesky",
+    href: "https://bsky.app/profile/emotiveworldcraft.bsky.social"
+  },
   twitter: {
     label: "X (formerly Twitter)",
     href: "https://twitter.com/aaronjholbrook",
