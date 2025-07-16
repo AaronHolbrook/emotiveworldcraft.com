@@ -21,6 +21,10 @@ export const NAV_LINKS: NavigationLinks = {
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
+  twitter: {
+    label: "X (formerly Twitter)",
+    href: "https://twitter.com/aaronjholbrook",
+  },
   email: {
     label: "Email",
     href: "mailto:hello@aaronjholbrook.com",
