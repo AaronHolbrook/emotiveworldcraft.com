@@ -21,6 +21,10 @@ export const NAV_LINKS: NavigationLinks = {
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
+  threads: {
+    label: "Threads",
+    href: "https://www.threads.com/@aaronjholbrook"
+  },
   facebook: {
     label: "Facebook",
     href: "https://www.facebook.com/people/Emotive-WorldCraft/61578701720912/"
