@@ -15,7 +15,7 @@ export default function FadeInLines({ children, delayPerLine = 200 }) {
                 }
             },
             {
-                threshold: 0.05,
+                threshold: 0.25,
                 rootMargin: '0px 0px -10% 0px'
             }
         );
