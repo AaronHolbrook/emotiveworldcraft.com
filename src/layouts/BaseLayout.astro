@@ -9,15 +9,14 @@ import EmailSignup from "@/components/EmailSignup.astro";
 
 <html
   lang="en"
-  class="dark bg-cover bg-fixed bg-center bg-no-repeat"
-  style="background-image:url('/images/site-bg.jpg')">
+  class="dark">
   <BaseHead>
     <slot name="head" />
   </BaseHead>
-  <body class="">
+  <body>
     <Navigation />
     <div
-      class="isolate mx-auto max-w-screen-sm rounded-3xl bg-white/5 p-4 font-sans shadow-2xl ring-1 ring-black/5 backdrop-blur-3xl backdrop-brightness-50">
+      class="isolate mx-auto max-w-screen-sm rounded-3xl bg-white/5 p-4 font-sans shadow-2xl ring-1 ring-black/5 backdrop-blur-md backdrop-brightness-60">
       <main class="min-h-[80vh]">
         <slot />
       </main>
