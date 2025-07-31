@@ -7,12 +7,9 @@ const { world } = Astro.props;
 <li>
   <a
     href={`/worlds/${world.id}`}
-    class="link flex w-full flex-col sm:flex-row sm:items-center sm:justify-between"
-  >
+    class="link flex w-full flex-col sm:flex-row sm:items-center sm:justify-between">
     <span>{world.data.title}</span>
-    <div
-      class="text-muted-text dark:text-dark-muted-text text-sm font-normal decoration-0"
-    >
+    <div class="text-muted-text dark:text-dark-muted-text text-sm font-normal decoration-0">
       {formatDate(world.data.publicationDate)}
     </div>
   </a>
