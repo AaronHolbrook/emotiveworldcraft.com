@@ -7,7 +7,7 @@ const worlds = defineCollection({
     z.object({
       title: z.string(),
       status: z.enum(["draft", "protected", "unlisted", "published"]),
-      
+
       publicationDate: z.date().optional(),
 
       description: z.string().optional(),
@@ -15,6 +15,7 @@ const worlds = defineCollection({
       imageAlt: z.string().optional(),
       audio: z.string().optional(),
       streamLink: z.string().optional(),
+      youtube: z.string().optional(),
       tags: z.array(z.string()).optional(),
     }),
 });

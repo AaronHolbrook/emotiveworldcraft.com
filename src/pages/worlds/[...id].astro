@@ -97,6 +97,26 @@ const { Content } = await render(entry);
       )
     }
 
+    {
+      entry.data.youtube && (
+        <div class="mb-8 rounded-lg bg-[#6A3645]/20 px-6 pt-6 pb-4 text-center shadow-sm backdrop-blur-xl">
+          <p class="text-muted-text dark:text-dark-muted-text mx-auto max-w-xl text-sm">
+            This world has its own soundtrack. Press play to hear the music that inspired and shapes this experience.
+            Feel free to listen as you read or simply take it in on its own.
+          </p>
+
+          <div class="video-container mt-4">
+            <iframe
+              src={entry.data.youtube}
+              title="YouTube video player"
+              allowfullscreen
+              loading="lazy"
+            />
+          </div>
+        </div>
+      )
+    }
+
     <div class="prose mx-auto">
       <Content />
     </div>
